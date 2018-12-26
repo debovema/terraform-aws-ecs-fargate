@@ -15,5 +15,5 @@ output "private_subnet_ids" {
 }
 
 output "ecs_arn" {
-  value = "${aws_ecs_cluster.ecs.0.arn}"
+  value = "${var.ecs_enabled == "true" ? element(concat(aws_ecs_cluster.ecs.*.arn, list("")), 0) : ""}"
 }
