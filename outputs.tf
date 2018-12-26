@@ -13,3 +13,7 @@ output "alb_target_group_arn" {
 output "private_subnet_ids" {
   value = ["${module.subnets.private_subnet_ids}"]
 }
+
+output "ecs_arn" {
+  value = "${aws_ecs_cluster.ecs.ecs_arn}"
+}
