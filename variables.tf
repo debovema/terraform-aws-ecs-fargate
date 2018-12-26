@@ -61,3 +61,9 @@ variable "ecs_enabled" {
   default     = "true"
   description = "Whether to create an ECS cluster or not. Other resources such as VPC, ALB and subnets will always be created"
 }
+
+variable "create_log_group" {
+  type        = "string"
+  default     = "false"
+  description = "Whether to create a Cloud Watch log group"
+}

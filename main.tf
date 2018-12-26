@@ -63,6 +63,8 @@ resource "aws_cloudwatch_log_group" "container_log_group" {
     Environment = "${module.label.stage}"
     Application = "${module.label.name}"
   }
+
+  count = "${var.create_log_group == "true" ? 1 : 0}"  
 }
 
 resource "aws_ecs_cluster" "ecs" {
