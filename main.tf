@@ -68,5 +68,5 @@ resource "aws_cloudwatch_log_group" "container_log_group" {
 resource "aws_ecs_cluster" "ecs" {
   name = "${module.label.name}"
 
-  count = "${var.ecs_enabled == "true"}"
+  count = "${var.ecs_enabled == "true" ? 1 : 0}"
 }
