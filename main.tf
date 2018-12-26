@@ -52,6 +52,7 @@ module "alb" {
 
   subnet_ids                       = ["${module.subnets.public_subnet_ids}"]
   access_logs_region               = "${data.aws_region.current.name}"
+  access_logs_enabled              = "false"
 
   health_check_unhealthy_threshold = "${var.alb_health_check_unhealthy_threshold}"
   health_check_interval            = "${var.alb_health_check_interval}"
