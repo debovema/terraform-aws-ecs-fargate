@@ -33,6 +33,7 @@ module "subnets" {
   region              = "${data.aws_region.current.name}"
   vpc_id              = "${module.vpc.vpc_id}"
   igw_id              = "${module.vpc.igw_id}"
+  nat_gateway_enabled = "false"
 
   cidr_block          = "10.0.0.0/16"
   availability_zones  = ["${slice(data.aws_availability_zones.available.names, 0, var.az_count)}"]
