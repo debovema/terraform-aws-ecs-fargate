@@ -55,3 +55,9 @@ variable "az_count" {
   type        = "string"
   default     = "2"
 }
+
+variable "ecs_enabled" {
+  type        = "string"
+  default     = "true"
+  description = "Whether to create an ECS cluster or not. Other resources such as VPC, ALB and subnets will always be created"
+}
